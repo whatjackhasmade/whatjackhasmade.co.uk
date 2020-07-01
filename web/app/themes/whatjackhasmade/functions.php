@@ -36,7 +36,6 @@ class StarterSite extends Timber\Site
     public function __construct()
     {
         add_action('after_setup_theme', array($this, 'theme_supports'));
-        add_action('after_setup_theme', array($this, 'legacy_functions'));
         add_filter('timber_context', array($this, 'add_to_context'));
         add_filter('upload_mimes', array($this, 'cc_mime_types'));
         add_action('init', array($this, 'register_blocks'));
@@ -362,14 +361,6 @@ class StarterSite extends Timber\Site
     public function remove_image_size_attributes($html)
     {
         return preg_replace('/(width|height)="\d*"/', '', $html);
-    }
-
-    public function legacy_functions()
-    {
-        include_once 'includes/functions/get-acf-images.php';
-        include_once 'includes/functions/get-acf-titles.php';
-        include_once 'includes/functions/convert-the-content.php';
-        include_once 'includes/rest-pages.php';
     }
 }
 
