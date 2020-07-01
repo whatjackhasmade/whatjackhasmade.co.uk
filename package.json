@@ -1,0 +1,36 @@
+{
+	"name": "wjhm-wordpress-theme",
+	"version": "1.0.0",
+	"description": "WhatJackHasMade WordPress Theme",
+	"main": "gulpfile.js",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"postinstall": "git pull --recurse-submodules",
+		"start": "gulp",
+		"upgrade": "npm-check --update"
+	},
+	"author": "Jack Pritchard (@whatjackhasmade)",
+	"license": "ISC",
+	"dependencies": {
+		"@babel/core": "^7.4.3",
+		"browser-sync": "^2.26.3",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-notify": "^3.2.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sass": "^4.0.2",
+		"gulp-sass-glob": "^1.0.9",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-uglify-es": "^2.0.0",
+		"path": "^0.12.7"
+	},
+	"devDependencies": {
+		"npm-check": "^5.9.0",
+		"prettier": "^2.0.5"
+	}
+}

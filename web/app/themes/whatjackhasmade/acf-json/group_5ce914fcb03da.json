@@ -1,0 +1,25 @@
+{
+    "key": "group_5ce914fcb03da",
+    "title": "Block: YouTube Channel",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/youtubechannel"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "show_in_graphql": 1,
+    "graphql_field_name": "ACFYouTubeChannelBlockFields",
+    "modified": 1573561753
+}

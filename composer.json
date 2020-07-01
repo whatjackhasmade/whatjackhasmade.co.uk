@@ -1,0 +1,140 @@
+{
+	"name": "roots/bedrock",
+	"type": "project",
+	"license": "MIT",
+	"description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+	"homepage": "https://roots.io/bedrock/",
+	"authors": [
+		{
+			"name": "Scott Walkinshaw",
+			"email": "scott.walkinshaw@gmail.com",
+			"homepage": "https://github.com/swalkinshaw"
+		},
+		{
+			"name": "Ben Word",
+			"email": "ben@benword.com",
+			"homepage": "https://github.com/retlehs"
+		}
+	],
+	"keywords": [
+		"bedrock",
+		"composer",
+		"roots",
+		"wordpress",
+		"wp",
+		"wp-config"
+	],
+	"support": {
+		"issues": "https://github.com/roots/bedrock/issues",
+		"forum": "https://discourse.roots.io/category/bedrock"
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "composer",
+			"url": "https://pivvenit.github.io/acf-composer-bridge/composer/v2/wordpress-muplugin/"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wp-sync-db/wp-sync-db",
+				"type": "wordpress-plugin",
+				"version": "1.0.0",
+				"source": {
+					"url": "https://github.com/wp-sync-db/wp-sync-db.git",
+					"type": "git",
+					"reference": "master"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wp-sync-db/wp-sync-db-media-files",
+				"type": "wordpress-plugin",
+				"version": "1.0.0",
+				"source": {
+					"url": "https://github.com/wp-sync-db/wp-sync-db-media-files.git",
+					"type": "git",
+					"reference": "master"
+				}
+			}
+		}
+	],
+	"require": {
+		"php": ">=7.1",
+		"advanced-custom-fields/advanced-custom-fields-pro": "^5.8.12",
+		"composer/installers": "^1.7",
+		"oscarotero/env": "^1.2.0",
+		"roots/wordpress": "^5.4.2",
+		"roots/wp-config": "1.0.0",
+		"roots/wp-password-bcrypt": "1.0.0",
+		"vlucas/phpdotenv": "^3.4.0",
+		"wp-sync-db/wp-sync-db": "^1.0.0",
+		"wp-sync-db/wp-sync-db-media-files": "^1.0.0",
+		"wpackagist-plugin/amazon-s3-and-cloudfront": "^2.1.0",
+		"wpackagist-plugin/disable-gutenberg": "^1.9",
+		"wpackagist-plugin/duplicate-post": "^3.2.3",
+		"wpackagist-plugin/regenerate-thumbnails": "^3.1.0",
+		"wpackagist-plugin/timber-library": "^1.16.0",
+		"wpackagist-plugin/wordpress-seo": "^14.4.1",
+		"wpackagist-plugin/wp-jamstack-deployments": "^0.4.1",
+		"ashhitch/wp-graphql-yoast-seo": "^4.3.0",
+		"pristas-peter/wp-graphql-gutenberg": "^0.3.4",
+		"pristas-peter/wp-graphql-gutenberg-acf": "^0.3.0",
+		"wp-graphql/wp-graphql": "^0.10.0",
+		"wp-graphql/wp-graphiql": "^1.0.1",
+		"wp-graphql/wp-graphql-acf": "^0.3.4"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.4.2",
+		"roave/security-advisories": "dev-master"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"extra": {
+		"installer-paths": {
+			"web/app/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin",
+				"wp-sync-db/wp-sync-db",
+				"wp-sync-db/wp-sync-db-media-files",
+				"wpackagist-plugin/amazon-s3-and-cloudfront",
+				"wpackagist-plugin/disable-gutenberg",
+				"wpackagist-plugin/duplicate-post",
+				"wpackagist-plugin/regenerate-thumbnails",
+				"wpackagist-plugin/timber-library",
+				"wpackagist-plugin/wordpress-seo",
+				"wpackagist-plugin/wp-jamstack-deployments",
+				"wp-graphql/wp-graphql",
+				"wp-graphql/wp-graphiql",
+				"wp-graphql/wp-graphql-acf",
+				"pristas-peter/wp-graphql-gutenberg",
+				"ashhitch/wp-graphql-yoast-seo",
+				"pristas-peter/wp-graphql-gutenberg-acf"
+			],
+			"web/app/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"web/app/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		},
+		"wordpress-install-dir": "web/wp"
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"php -r \"copy('.env.example', '.env');\""
+		],
+		"test": [
+			"phpcs"
+		]
+	}
+}

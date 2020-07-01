@@ -1,0 +1,42 @@
+{
+    "key": "group_5ca60361c0b71",
+    "title": "Block: YouTube",
+    "fields": [
+        {
+            "key": "field_5ca60371bba5f",
+            "label": "YouTube video",
+            "name": "media",
+            "type": "url",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/youtube"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "show_in_graphql": 1,
+    "graphql_field_name": "ACFYouTubeBlockFields",
+    "modified": 1573561733
+}
