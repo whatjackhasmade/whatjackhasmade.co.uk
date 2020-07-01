@@ -7,7 +7,6 @@
 		"test": "tests"
 	},
 	"scripts": {
-		"postinstall": "git pull --recurse-submodules",
 		"start": "gulp",
 		"upgrade": "npm-check --update"
 	},
