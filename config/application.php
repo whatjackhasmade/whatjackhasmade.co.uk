@@ -75,6 +75,7 @@ if (env('DATABASE_URL')) {
 /**
  * Authentication Unique Keys and Salts
  */
+Config::define('GRAPHQL_JWT_AUTH_SECRET_KEY', env('GRAPHQL_JWT_AUTH_SECRET_KEY'));
 Config::define('AUTH_KEY', env('AUTH_KEY'));
 Config::define('SECURE_AUTH_KEY', env('SECURE_AUTH_KEY'));
 Config::define('LOGGED_IN_KEY', env('LOGGED_IN_KEY'));
